@@ -4,9 +4,16 @@ import { Button } from "../ui/button";
 interface CevaturaMessageProps {
   onContinue: () => void;
   onCancel: () => void;
+  title?: string;
+  message?: string;
 }
 
-export const CevaturaMessage = ({ onContinue, onCancel }: CevaturaMessageProps) => {
+export const CevaturaMessage = ({ 
+  onContinue, 
+  onCancel,
+  title = "¡VAS MUY BIEN!",
+  message = "CEVATUR PIURA TIENE 50 AÑOS EN EL RUBRO DE TURISMO, ¿QUIERES CONTINUAR PARA GANAR Y ACCEDER A NUESTRAS OFERTAS?"
+}: CevaturaMessageProps) => {
   return (
     <motion.div
       className="absolute inset-0 bg-black/90 flex flex-col items-center justify-center p-6 z-30"
@@ -27,16 +34,16 @@ export const CevaturaMessage = ({ onContinue, onCancel }: CevaturaMessageProps) 
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
       >
-        ¡VAS MUY BIEN!
+        {title}
       </motion.h3>
       
       <motion.p
-        className="text-white/90 text-center text-m mb-6 max-w-md"
+        className="text-white/90 text-center text-lg mb-6 max-w-md"
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
-        CEVATUR PIURA TIENE 50 AÑOS EN EL RUBRO DE TURISMO, ¿QUIERES CONTINUAR PARA GANAR Y ACCEDER A NUESTRAS OFERTAS?
+        {message}
       </motion.p>
       
       <motion.div
@@ -54,7 +61,7 @@ export const CevaturaMessage = ({ onContinue, onCancel }: CevaturaMessageProps) 
         <Button
           onClick={onCancel}
           variant="outline"
-          className="border-white/30 text-black hover:bg-white/10 px-6 py-6"
+          className="border-white/30 text-white hover:bg-white/10 px-6 py-6"
         >
           Salir
         </Button>

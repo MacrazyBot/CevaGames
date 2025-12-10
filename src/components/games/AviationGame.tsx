@@ -18,7 +18,7 @@ interface AviationGameProps {
   onClose: () => void;
 }
 
-const MAX_SCORE = 100;
+const MAX_SCORE = 30;
 
 export const AviationGame = ({ onClose }: AviationGameProps) => {
   const [gameState, setGameState] = useState<"playing" | "paused" | "won" | "survey">("playing");
@@ -32,7 +32,7 @@ export const AviationGame = ({ onClose }: AviationGameProps) => {
   const animationRef = useRef<number>();
   const obstacleIdRef = useRef(0);
 
-  const obstacleEmojis = ["✈️", "🛫", "🚁", "🚁", "🍹", "🍕", "🍔"];
+  const obstacleEmojis = ["✈️", "🛩️", "🚁", "🍸", "🍹", "🍕", "🍔"];
 
   const resetGame = useCallback(() => {
     setScore(0);
@@ -195,7 +195,7 @@ export const AviationGame = ({ onClose }: AviationGameProps) => {
           animate={{ rotate: [0, 5, 0, -5, 0] }}
           transition={{ duration: 0.5, repeat: Infinity }}
         >
-          🛩️
+          🛫
         </motion.div>
 
         {/* Obstacles */}
@@ -228,7 +228,12 @@ export const AviationGame = ({ onClose }: AviationGameProps) => {
 
         {/* Cevatura Message */}
         {showCevaturaMessage && (
-          <CevaturaMessage onContinue={handleContinue} onCancel={onClose} />
+          <CevaturaMessage 
+            onContinue={handleContinue} 
+            onCancel={onClose}
+            title="¡VUELAS INCREÍBLE!"
+            message="CEVATUR PIURA ES LA ACADEMIA N°1 EN AVIACIÓN COMERCIAL DEL NORTE CON 50 AÑOS FORMANDO AZAFATAS Y SOBRECARGOS PROFESIONALES. ¿QUIERES CONTINUAR Y DESCUBRIR TU FUTURO EN LOS CIELOS?"
+          />
         )}
       </div>
 

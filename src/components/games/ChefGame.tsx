@@ -21,7 +21,7 @@ interface ChefGameProps {
   onClose: () => void;
 }
 
-const MAX_SCORE = 16;
+const MAX_SCORE = 30;
 const GOOD_ITEMS = ["🍕", "🍔", "🌮", "🍣", "🍜", "🍝", "🥘", "🍗", "🥗", "🍰"];
 const BAD_ITEMS = ["🗑️", "🪳", "💀", "🧪"];
 
@@ -71,7 +71,7 @@ export const ChefGame = ({ onClose }: ChefGameProps) => {
       if (!lastTimeRef.current) lastTimeRef.current = timestamp;
       const delta = timestamp - lastTimeRef.current;
 
-      if (delta > 32) { // ~60fps
+      if (delta > 16) { // ~60fps
         lastTimeRef.current = timestamp;
 
         setItems((prev) => {
@@ -232,7 +232,12 @@ export const ChefGame = ({ onClose }: ChefGameProps) => {
 
         {/* Cevatura Message */}
         {showCevaturaMessage && (
-          <CevaturaMessage onContinue={handleContinue} onCancel={onClose} />
+          <CevaturaMessage 
+            onContinue={handleContinue} 
+            onCancel={onClose}
+            title="¡ERES UN GRAN CHEF!"
+            message="CEVATUR PIURA ES LÍDER EN GASTRONOMÍA PERUANA CON 50 AÑOS FORMANDO LOS MEJORES CHEFS DEL NORTE. ¿QUIERES CONTINUAR PARA GANAR Y CONOCER NUESTRAS CARRERAS CULINARIAS?"
+          />
         )}
       </div>
 

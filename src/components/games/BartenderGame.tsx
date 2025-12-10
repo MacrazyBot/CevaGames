@@ -256,7 +256,12 @@ export const BartenderGame = ({ onClose }: BartenderGameProps) => {
 
         {/* Cevatura Message */}
         {showCevaturaMessage && (
-          <CevaturaMessage onContinue={handleContinue} onCancel={onClose} />
+          <CevaturaMessage 
+            onContinue={handleContinue} 
+            onCancel={onClose}
+            title="¡EXCELENTE PUNTERÍA!"
+            message="CEVATUR PIURA TE ENSEÑA EL ARTE DE LA COCTELERÍA CON 50 AÑOS DE EXPERIENCIA. ¡CONVIÉRTETE EN UN BARTENDER PROFESIONAL! ¿QUIERES CONTINUAR PARA GANAR?"
+          />
         )}
       </div>
 
