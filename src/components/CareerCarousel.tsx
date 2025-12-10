@@ -11,7 +11,7 @@ import logo from "@/assets/logo.png";
 const careers = [
   {
     id: "aviation" as const,
-    title: "Azafata Comercial",
+    title: "Aviacion Comercial",
     description: "Vuela alto y alcanza tus sueños en la aviación comercial",
     image: aviationImage,
     youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
