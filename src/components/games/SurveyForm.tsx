@@ -31,7 +31,7 @@ export const SurveyForm = ({ onClose }: SurveyFormProps) => {
       `¡Quiero inscribirme en CEVATUR!`
     );
 
-    window.open(`https://wa.me/51999999999?text=${message}`, "_blank");
+    window.open(`https://wa.me/51967575397?text=${message}`, "_blank");
     onClose();
   };
 
