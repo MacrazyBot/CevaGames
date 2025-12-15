@@ -138,10 +138,17 @@ export const AviationGame = ({ onClose }: AviationGameProps) => {
   }, [gameState, gameOver]);
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (!gameRef.current || gameState !== "playing") return;
     const rect = gameRef.current.getBoundingClientRect();
     const y = ((e.touches[0].clientY - rect.top) / rect.height) * 100;
     setPlayerY(Math.max(5, Math.min(95, y)));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
   };
 
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -171,7 +178,8 @@ export const AviationGame = ({ onClose }: AviationGameProps) => {
 
       <div
         ref={gameRef}
-        className="relative w-full h-[300px] sm:h-[400px] bg-gradient-to-r from-sky-400 via-sky-300 to-sky-200 rounded-xl overflow-hidden cursor-none mt-4"
+        className="relative w-full h-[300px] sm:h-[400px] bg-gradient-to-r from-sky-400 via-sky-300 to-sky-200 rounded-xl overflow-hidden cursor-none mt-4 touch-none"
+        onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onMouseMove={handleMouseMove}
       >
