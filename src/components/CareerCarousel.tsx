@@ -14,21 +14,21 @@ const careers = [
     title: "Aviacion Comercial",
     description: "Vuela alto y alcanza tus sueños en la aviación comercial",
     image: aviationImage,
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://cevaturpiura.edu.pe/Careers#careers",
   },
   {
     id: "chef" as const,
     title: "Chef Profesional",
     description: "Domina el arte culinario y conviértete en un chef de clase mundial",
     image: chefImage,
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://cevaturpiura.edu.pe/Careers#careers",
   },
   {
     id: "bartender" as const,
     title: "Bartender Experto",
     description: "Aprende el arte de la mixología y crea experiencias únicas",
     image: bartenderImage,
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://cevaturpiura.edu.pe/Careers#careers",
   },
 ];
 
